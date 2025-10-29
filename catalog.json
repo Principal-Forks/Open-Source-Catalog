@@ -20320,5 +20320,59 @@
             "nlp:shape"
         ],
         "External Link": ""
+    },
+    {
+        "Update_Date": "2025-10-29",
+        "Description": "The Harmony Trajectory Subsetter is a Harmony backend service developed as part of the NASA Earth Observing System Data and Information System (EOSDIS). The service can subset trajectory data, structured as 1-dimensional along-track arrays, while preserving aggregated segments where applicable. Supports variable, temporal and spatial subsetting by bounding box or polygon shape files (GeoJSON). Supported data include ICESat-2, SMAP L2 and GEDI waveform data.",
+        "Public Code Repo": "https://github.com/nasa/harmony-trajectory-subsetter",
+        "NASA Center": "GSFC",
+        "Contributors": [
+            "Josie Lyon",
+            "josie.lyon@nasa.gov",
+            "lyonthefrog",
+            "Matthew Savoie",
+            "matthew.savoie@colorado.edu",
+            "flamingbear",
+            "Owen Littlejohns",
+            "owen.m.littlejohns@nasa.gov",
+            "owenlittlejohns",
+            "Vu Tran",
+            "vu.tran-1@nasa.gov",
+            "vutrannasa",
+            "David Auty",
+            "david.p.auty@nasa.gov",
+            "autydp",
+            "Joseph Schultz",
+            "joseph.schultz@nasa.gov",
+            "joeyschultz"
+        ],
+        "Labor_Hours": 2000,
+        "Categories": [
+            "nasa-eosdis",
+            "earth-observation",
+            "variable-subset",
+            "temporal-subset",
+            "spatial-subset",
+            "eosdis-harmony"
+        ],
+        "Languages": [],
+        "Software": "Harmony Trajectory Subsetter",
+        "License": [
+            "Apache-2.0",
+            "NASA Open Source"
+        ],
+        "Categories_NLP": [
+            "nlp:trajectory optimization",
+            "nlp:file maintenance (computers)",
+            "nlp:meteorological service",
+            "nlp:trajectory",
+            "nlp:shape",
+            "nlp:support system",
+            "nlp:solar array",
+            "nlp:array",
+            "nlp:antenna array",
+            "nlp:trajectory analysi"
+        ],
+        "External Link": ""
     }
 ]
