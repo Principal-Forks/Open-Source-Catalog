@@ -1,0 +1,57 @@
+{
+  "payload": {
+    "repositoryURL": "https://github.com/NASAjoe/MATLAB_CODEV_toolkit",
+    "homepageURL": "",
+    "downloadURL": "",
+    "disclaimerURL": "",
+    "laborHours": 500,
+    "languages": [
+      "Matlab",
+      "CODE V macro language"
+    ],
+    "name": "MATLAB_CODEV_toolkit",
+    "contributors": [
+      {
+        "name": "Mark Wilson",
+        "email": "N/A",
+        "github": "N/A"
+      },
+      {
+        "name": "Blair Unger",
+        "email": "N/A",
+        "github": "N/A"
+      }
+    ],
+    "tags": [
+      "Matlab",
+      "CODE V",
+      "Optical Design",
+      "Ray trace"
+    ],
+    "description": "MATLAB-Code V Toolkit (GSC-15140-1)\n\nOverview: This toolkit is a set of MATLAB scripts and functions that enable rapid transfer of optical system and performance data from Code V optical software into the MATLAB environment. Typical applications include: extracting prescription data into MATLAB to confirm consistency of various delivered models; perturbing the models and performing various analyses such as ray tracing or generation of point-spread functions in support of integrated modeling activities; and enabling a MATLAB-driven optical model for integrated system-level modeling of wavefront sensing and control.",
+    "contact": {
+      "email": "joseph.m.howard@nasa.gov",
+      "name": "",
+      "phone": "",
+      "URL": ""
+    },
+    "date": {
+      "lastModified": "2026-12-15",
+      "metadataLastUpdated": "2025-12-17",
+      "created": "2007-03-20"
+    },
+    "organization": "GSFC",
+    "permissions": {
+      "licenses": [
+        {
+          "name": "NASA Open Source",
+          "URL": "https://opensource.org/licenses/NASA-1.3"
+        }
+      ],
+      "usageType": "openSource",
+      "exemptionText": null
+    }
+  },
+  "contact_email": "R6v6loFi7+i/bXvI5OGNUrEEofb3k6lvXkVEPZeYX18wdshtHiMg/A==",
+  "nonce": "3SMJsR7DK+8orLZtmTVdBffX6/jdmlII"
+}
