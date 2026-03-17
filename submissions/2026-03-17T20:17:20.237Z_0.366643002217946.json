@@ -1,0 +1,54 @@
+{
+  "payload": {
+    "repositoryURL": "https://aetd-git.gsfc.nasa.gov/ai/multi-path-fusion/-/commits/open-source-release",
+    "homepageURL": "",
+    "downloadURL": "",
+    "disclaimerURL": "",
+    "laborHours": 3120,
+    "languages": [
+      "Python",
+      "Markdown",
+      "JSON"
+    ],
+    "name": "MEOW ML",
+    "contributors": [
+      {
+        "name": "Mark Moussa",
+        "email": "mark.m.moussa@nasa.gov",
+        "github": "mmmoussa96"
+      }
+    ],
+    "tags": [
+      "usg-artificial-intelligence",
+      "artificial-intelligence",
+      "machine-learning",
+      "earth-observation",
+      "earth-science"
+    ],
+    "description": "This is the Multimodal Earth Observation Workflow for Machine Learning (MEOW-ML), an end-to-end data fusion and artificial intelligence (AI) and machine learning (ML) framework tailored for Earth Observation (EO). MEOW-ML supports the full AI/ML lifecycle, from data preparation to model training and evaluation. It serves to greatly speed up the development cycle, particularly the iterative loops of data processing and model architecture development, and, critically, enables the integration of heterogeneous data sources through a novel hierarchical, multi-path model architecture. It is a flexible, extensible framework for machine learning on Earth observation data, with support for multi-path data fusion and custom model architectures.",
+    "contact": {
+      "email": "mark.m.moussa@nasa.gov",
+      "name": "Mark Moussa",
+      "phone": 8137310742,
+      "URL": ""
+    },
+    "date": {
+      "lastModified": "2026-03-12",
+      "metadataLastUpdated": "2026-03-17",
+      "created": "2023-04-01"
+    },
+    "organization": "GSFC",
+    "permissions": {
+      "licenses": [
+        {
+          "name": "NASA Open Source",
+          "URL": "https://opensource.org/licenses/NASA-1.3"
+        }
+      ],
+      "usageType": "openSource",
+      "exemptionText": null
+    }
+  },
+  "contact_email": "W6XAN2L1RivBPH/Ci8fwt+y4IVRNOrezFEA7J9ZoFlrZpvZgL0I=",
+  "nonce": "SQRQULkvVXoJBSNkuW/RNvqS2L9mjDfH"
+}
