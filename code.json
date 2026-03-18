@@ -74800,7 +74800,7 @@
                 "URL": ""
             },
             "date": {
-                "lastModified": "2026-04-12",
+                "lastModified": "2026-03-11",
                 "metadataLastUpdated": "2026-03-18",
                 "created": "2023-05-01"
             },
@@ -74816,19 +74816,19 @@
                 "exemptionText": null
             },
             "sti_keywords_passed_thresholds": [
-                "nlp:learning",
-                "nlp:intelligence",
                 "nlp:systems integration",
-                "nlp:machine learning",
-                "nlp:multisensor fusion",
-                "nlp:architecture (computers)",
-                "nlp:data processing",
                 "nlp:education",
                 "nlp:model",
+                "nlp:data processing",
+                "nlp:intelligence",
+                "nlp:multisensor fusion",
+                "nlp:learning",
+                "nlp:machine learning",
+                "nlp:architecture (computers)",
                 "nlp:artificial intelligence"
             ],
             "service_version": "5.0.12",
-            "date_AI_tags": "2026_March_18_at_06_40PM",
+            "date_AI_tags": "2026_March_18_at_06_55PM",
             "local-id": "59400031-4cba-48a0-9d8a-c47723d3cf7e"
         }
     ]
