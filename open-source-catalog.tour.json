@@ -1,0 +1,79 @@
+{
+  "id": "nasa-open-source-catalog",
+  "title": "NASA Open Source Catalog",
+  "description": "How NASA tracks and publishes thousands of open source projects through code.nasa.gov",
+  "version": "1.0.0",
+  "steps": [
+    {
+      "id": "what-is-this",
+      "title": "NASA's Open Source Registry",
+      "description": "This repo is the single source of truth for all NASA open source projects published on code.nasa.gov. Developers across NASA field centers submit project metadata here, and it feeds the public-facing catalog.",
+      "focusDirectory": "",
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "the-catalog",
+      "title": "The Community Catalog",
+      "description": "catalog.json is where NASA developers add their projects via pull requests. Each entry includes the center, description, license, categories, and repo URL. This community-driven approach lets any NASA team publish their work.",
+      "focusDirectory": "",
+      "highlightLayers": [
+        {
+          "id": "catalog-file",
+          "name": "Community Catalog",
+          "color": "#3b82f6",
+          "items": [
+            { "path": "catalog.json", "type": "file" },
+            { "path": "required_fields_project_template.json", "type": "file" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ]
+    },
+    {
+      "id": "code-gov-format",
+      "title": "Federal Code Inventory",
+      "description": "code.json follows the federal code.gov schema, a standardized format required by policy for all US agencies. The schema in code-nasa-schema.json defines fields like permissions, labor hours, and contact info for each software release.",
+      "focusDirectory": "",
+      "highlightLayers": [
+        {
+          "id": "federal-inventory",
+          "name": "Federal Inventory",
+          "color": "#10b981",
+          "items": [
+            { "path": "code.json", "type": "file" },
+            { "path": "code-nasa-schema.json", "type": "file" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ]
+    },
+    {
+      "id": "history-and-meta",
+      "title": "Tracking Changes Over Time",
+      "description": "code-history.json preserves version snapshots of project entries, enabling auditing of how metadata evolves. meta.json describes this repository itself, including its missions (OCIO, HQ) and point of contact.",
+      "focusDirectory": "",
+      "highlightLayers": [
+        {
+          "id": "tracking-files",
+          "name": "History & Metadata",
+          "color": "#f59e0b",
+          "items": [
+            { "path": "code-history.json", "type": "file" },
+            { "path": "meta.json", "type": "file" }
+          ],
+          "opacity": 0.7,
+          "renderStrategy": "border"
+        }
+      ]
+    },
+    {
+      "id": "full-picture",
+      "title": "The Full Picture",
+      "description": "Two parallel catalogs serve different audiences: catalog.json for code.nasa.gov visitors, code.json for federal compliance. Together they make NASA one of the most transparent agencies for open source software.",
+      "focusDirectory": "",
+      "colorMode": "fileTypes"
+    }
+  ]
+}
