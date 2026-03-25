@@ -52,7 +52,7 @@
     {
       "id": "history-and-meta",
       "title": "Tracking Changes Over Time",
-      "description": "code-history.json preserves version snapshots of project entries, enabling auditing of how metadata evolves. meta.json describes this repository itself, including its missions (OCIO, HQ) and point of contact.",
+      "description": "code-history.json preserves version snapshots of project entries, enabling auditing of how metadata evolves. meta.json describes this repository itself, including its missions (Office of the Chief Information Officer, Headquarters) and point of contact.",
       "focusDirectory": "",
       "highlightLayers": [
         {
