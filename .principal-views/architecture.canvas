@@ -1,0 +1,336 @@
+{
+  "pv": {
+    "name": "NASA Open Source Catalog Architecture",
+    "version": "1.0.0",
+    "markdown": ".principal-views/architecture.md"
+  },
+  "nodes": [
+    {
+      "id": "github-pr",
+      "type": "text",
+      "text": "GitHub Pull Requests",
+      "x": 100,
+      "y": 100,
+      "width": 200,
+      "height": 80,
+      "color": "#E67E22",
+      "pv": {
+        "nodeType": "submission-source",
+        "name": "GitHub Pull Requests",
+        "description": "Community submissions via GitHub PRs",
+        "shape": "submission-source",
+        "icon": "Upload"
+      }
+    },
+    {
+      "id": "web-form",
+      "type": "text",
+      "text": "Web Submission Form",
+      "x": 100,
+      "y": 250,
+      "width": 200,
+      "height": 80,
+      "color": "#E67E22",
+      "pv": {
+        "nodeType": "submission-source",
+        "name": "Web Submission Form",
+        "description": "Internal submission form at code-submission-app.code.nasa.gov",
+        "shape": "submission-source",
+        "icon": "Upload"
+      }
+    },
+    {
+      "id": "robot-branch",
+      "type": "text",
+      "text": "Robot Branch",
+      "x": 100,
+      "y": 400,
+      "width": 200,
+      "height": 80,
+      "color": "#E67E22",
+      "pv": {
+        "nodeType": "submission-source",
+        "name": "Robot Branch",
+        "description": "Automated submissions via robot branch",
+        "shape": "submission-source",
+        "icon": "Upload"
+      }
+    },
+    {
+      "id": "master-branch",
+      "type": "text",
+      "text": "Master Branch (Git)",
+      "x": 400,
+      "y": 250,
+      "width": 200,
+      "height": 80,
+      "color": "#4A90E2",
+      "pv": {
+        "nodeType": "data-store",
+        "name": "Master Branch (Git)",
+        "description": "Canonical source of truth",
+        "shape": "data-store",
+        "icon": "Database"
+      }
+    },
+    {
+      "id": "catalog-json",
+      "type": "text",
+      "text": "catalog.json",
+      "x": 700,
+      "y": 100,
+      "width": 200,
+      "height": 80,
+      "color": "#5CB85C",
+      "pv": {
+        "nodeType": "catalog-json",
+        "name": "catalog.json",
+        "description": "Community-friendly NASA project catalog (20,417 lines)",
+        "shape": "catalog-json",
+        "icon": "FileJson"
+      }
+    },
+    {
+      "id": "code-json",
+      "type": "text",
+      "text": "code.json",
+      "x": 700,
+      "y": 250,
+      "width": 200,
+      "height": 80,
+      "color": "#F0AD4E",
+      "pv": {
+        "nodeType": "code-json",
+        "name": "code.json",
+        "description": "Federal code.gov compliance inventory (74,754 lines)",
+        "shape": "code-json",
+        "icon": "FileCode"
+      }
+    },
+    {
+      "id": "code-history",
+      "type": "text",
+      "text": "code-history.json",
+      "x": 700,
+      "y": 400,
+      "width": 200,
+      "height": 80,
+      "color": "#5BC0DE",
+      "pv": {
+        "nodeType": "code-history",
+        "name": "code-history.json",
+        "description": "Version history snapshots (7,993 lines)",
+        "shape": "code-history",
+        "icon": "History"
+      }
+    },
+    {
+      "id": "schema-validator",
+      "type": "text",
+      "text": "Schema Validator",
+      "x": 1000,
+      "y": 175,
+      "width": 200,
+      "height": 80,
+      "color": "#27AE60",
+      "pv": {
+        "nodeType": "validator",
+        "name": "Schema Validator",
+        "description": "Validates against code-nasa-schema.json",
+        "shape": "validator",
+        "icon": "CheckCircle"
+      }
+    },
+    {
+      "id": "nasa-schema",
+      "type": "text",
+      "text": "code-nasa-schema.json",
+      "x": 1000,
+      "y": 325,
+      "width": 200,
+      "height": 80,
+      "color": "#9B59B6",
+      "pv": {
+        "nodeType": "schema",
+        "name": "code-nasa-schema.json",
+        "description": "JSON Schema (draft-04) for federal compliance",
+        "shape": "schema",
+        "icon": "ShieldCheck"
+      }
+    },
+    {
+      "id": "travis-ci",
+      "type": "text",
+      "text": "Travis CI",
+      "x": 1300,
+      "y": 250,
+      "width": 200,
+      "height": 80,
+      "color": "#34495E",
+      "pv": {
+        "nodeType": "ci-pipeline",
+        "name": "Travis CI",
+        "description": "Continuous integration and validation",
+        "shape": "ci-pipeline",
+        "icon": "Cog"
+      }
+    },
+    {
+      "id": "code-nasa-gov",
+      "type": "text",
+      "text": "code.nasa.gov",
+      "x": 1600,
+      "y": 150,
+      "width": 200,
+      "height": 80,
+      "color": "#3498DB",
+      "pv": {
+        "nodeType": "web-portal",
+        "name": "code.nasa.gov",
+        "description": "Public-facing NASA open source portal",
+        "shape": "web-portal",
+        "icon": "Globe"
+      }
+    },
+    {
+      "id": "code-gov",
+      "type": "text",
+      "text": "code.gov",
+      "x": 1600,
+      "y": 350,
+      "width": 200,
+      "height": 80,
+      "color": "#95A5A6",
+      "pv": {
+        "nodeType": "external-service",
+        "name": "code.gov",
+        "description": "Federal government code sharing platform",
+        "shape": "external-service",
+        "icon": "Cloud"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "github-pr",
+      "toNode": "master-branch",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "Submit PR",
+      "pv": {
+        "edgeType": "submission"
+      }
+    },
+    {
+      "id": "e2",
+      "fromNode": "web-form",
+      "toNode": "master-branch",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "Submit via form",
+      "pv": {
+        "edgeType": "submission"
+      }
+    },
+    {
+      "id": "e3",
+      "fromNode": "robot-branch",
+      "toNode": "master-branch",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "Automated merge",
+      "pv": {
+        "edgeType": "submission"
+      }
+    },
+    {
+      "id": "e4",
+      "fromNode": "master-branch",
+      "toNode": "catalog-json",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "Store community data",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e5",
+      "fromNode": "master-branch",
+      "toNode": "code-json",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "Store federal data",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e6",
+      "fromNode": "master-branch",
+      "toNode": "code-history",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "Track history",
+      "pv": {
+        "edgeType": "sync"
+      }
+    },
+    {
+      "id": "e7",
+      "fromNode": "code-json",
+      "toNode": "schema-validator",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "Validate",
+      "pv": {
+        "edgeType": "validation"
+      }
+    },
+    {
+      "id": "e8",
+      "fromNode": "nasa-schema",
+      "toNode": "schema-validator",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "label": "Schema rules",
+      "pv": {
+        "edgeType": "validation"
+      }
+    },
+    {
+      "id": "e9",
+      "fromNode": "schema-validator",
+      "toNode": "travis-ci",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "Pass validation",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e10",
+      "fromNode": "travis-ci",
+      "toNode": "code-nasa-gov",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "Publish to public portal",
+      "pv": {
+        "edgeType": "publication"
+      }
+    },
+    {
+      "id": "e11",
+      "fromNode": "travis-ci",
+      "toNode": "code-gov",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "Publish to federal registry",
+      "pv": {
+        "edgeType": "publication"
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+# Principal View Component Library
+version: "1.0.0"
+name: "NASA Open Source Catalog Architecture"
+description: "Component library for NASA Open Source Catalog visualizations"
+
+# Service resource registry
+resources:
+  open-source-catalog:
+    service.name: "nasa-open-source-catalog"
+    service.version: "1.0.0"
+    deployment.environment: "production"
+
+nodeComponents:
+  # Data Storage Components
+  data-store:
+    defaultLabel: "Data Store"
+    description: "JSON-based data storage"
+    icon: "Database"
+    color: "#4A90E2"
+
+  catalog-json:
+    defaultLabel: "Catalog JSON"
+    description: "Community-driven NASA project catalog"
+    icon: "FileJson"
+    color: "#5CB85C"
+
+  code-json:
+    defaultLabel: "Code JSON"
+    description: "Federal code.gov compliance inventory"
+    icon: "FileCode"
+    color: "#F0AD4E"
+
+  code-history:
+    defaultLabel: "Code History"
+    description: "Version history snapshots with UUID tracking"
+    icon: "History"
+    color: "#5BC0DE"
+
+  # Schema Components
+  schema:
+    defaultLabel: "JSON Schema"
+    description: "Schema validation component"
+    icon: "ShieldCheck"
+    color: "#9B59B6"
+
+  # External Systems
+  external-service:
+    defaultLabel: "External Service"
+    description: "External integration or service"
+    icon: "Cloud"
+    color: "#95A5A6"
+
+  web-portal:
+    defaultLabel: "Web Portal"
+    description: "Public-facing web interface"
+    icon: "Globe"
+    color: "#3498DB"
+
+  # Submission Sources
+  submission-source:
+    defaultLabel: "Submission Source"
+    description: "Source of project submissions"
+    icon: "Upload"
+    color: "#E67E22"
+
+  # Processing Components
+  ci-pipeline:
+    defaultLabel: "CI/CD Pipeline"
+    description: "Continuous integration and deployment"
+    icon: "Cog"
+    color: "#34495E"
+
+  validator:
+    defaultLabel: "Validator"
+    description: "Schema validation service"
+    icon: "CheckCircle"
+    color: "#27AE60"
+
+edgeComponents:
+  # Data Flow
+  data-flow:
+    label: "Data Flow"
+    description: "Flow of data between components"
+    color: "#4A90E2"
+
+  submission:
+    label: "Submission"
+    description: "Project submission flow"
+    color: "#E67E22"
+
+  validation:
+    label: "Validation"
+    description: "Schema validation flow"
+    color: "#27AE60"
+
+  publication:
+    label: "Publication"
+    description: "Data publication to external systems"
+    color: "#9B59B6"
+
+  sync:
+    label: "Sync"
+    description: "Data synchronization"
+    color: "#5BC0DE"
