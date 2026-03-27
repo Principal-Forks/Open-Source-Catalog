@@ -14,16 +14,18 @@
       "width": 200,
       "height": 100,
       "color": "#E67E22",
+      "event": {
+        "name": "catalog.submission.received",
+        "attributes": {
+          "submission.source": "github_pr | web_form | robot_branch",
+          "submission.project_name": "string",
+          "submission.nasa_center": "string"
+        }
+      },
       "pv": {
-        "status": "draft",
         "description": "Triggered when a new project submission is received through any channel",
-        "event": {
-          "name": "catalog.submission.received",
-          "attributes": {
-            "submission.source": "github_pr | web_form | robot_branch",
-            "submission.project_name": "string",
-            "submission.nasa_center": "string"
-          }
+        "otel": {
+          "status": "draft"
         }
       }
     },
@@ -37,10 +39,10 @@
       "height": 200,
       "color": "#3498DB",
       "pv": {
-        "status": "draft",
         "name": "catalog.submission.process",
         "description": "Parent span covering the entire submission processing lifecycle",
         "otel": {
+          "status": "draft",
           "spanPattern": "catalog.submission.process",
           "spanKind": "internal"
         }
@@ -55,15 +57,17 @@
       "width": 180,
       "height": 80,
       "color": "#9B59B6",
+      "event": {
+        "name": "catalog.validation.started",
+        "attributes": {
+          "validator": "travis_ci",
+          "commit.sha": "string"
+        }
+      },
       "pv": {
-        "status": "draft",
         "description": "CI/CD pipeline begins validation",
-        "event": {
-          "name": "catalog.validation.started",
-          "attributes": {
-            "validator": "travis_ci",
-            "commit.sha": "string"
-          }
+        "otel": {
+          "status": "draft"
         }
       }
     },
@@ -77,10 +81,10 @@
       "height": 120,
       "color": "#27AE60",
       "pv": {
-        "status": "draft",
         "name": "catalog.schema.validate",
         "description": "Schema validation against code-nasa-schema.json",
         "otel": {
+          "status": "draft",
           "spanPattern": "catalog.schema.validate",
           "spanKind": "internal"
         }
@@ -95,16 +99,18 @@
       "width": 180,
       "height": 80,
       "color": "#27AE60",
+      "event": {
+        "name": "catalog.validation.completed",
+        "attributes": {
+          "validation.result": "success | failure",
+          "validation.errors": "array",
+          "validation.duration_ms": "integer"
+        }
+      },
       "pv": {
-        "status": "draft",
         "description": "Schema validation completes with result",
-        "event": {
-          "name": "catalog.validation.completed",
-          "attributes": {
-            "validation.result": "success | failure",
-            "validation.errors": "array",
-            "validation.duration_ms": "integer"
-          }
+        "otel": {
+          "status": "draft"
         }
       }
     },
@@ -118,10 +124,10 @@
       "height": 120,
       "color": "#5CB85C",
       "pv": {
-        "status": "draft",
         "name": "catalog.data.persist",
         "description": "Writing data to catalog.json, code.json, and code-history.json",
         "otel": {
+          "status": "draft",
           "spanPattern": "catalog.data.persist",
           "spanKind": "internal"
         }
@@ -136,16 +142,18 @@
       "width": 180,
       "height": 80,
       "color": "#3498DB",
+      "event": {
+        "name": "catalog.submission.merged",
+        "attributes": {
+          "git.branch": "master",
+          "git.commit_sha": "string",
+          "merge.author": "string"
+        }
+      },
       "pv": {
-        "status": "draft",
         "description": "Submission successfully merged to master branch",
-        "event": {
-          "name": "catalog.submission.merged",
-          "attributes": {
-            "git.branch": "master",
-            "git.commit_sha": "string",
-            "merge.author": "string"
-          }
+        "otel": {
+          "status": "draft"
         }
       }
     },
@@ -159,10 +167,10 @@
       "height": 220,
       "color": "#9B59B6",
       "pv": {
-        "status": "draft",
         "name": "catalog.publication.execute",
         "description": "Parent span for publishing to external portals",
         "otel": {
+          "status": "draft",
           "spanPattern": "catalog.publication.execute",
           "spanKind": "client"
         }
@@ -178,10 +186,10 @@
       "height": 80,
       "color": "#3498DB",
       "pv": {
-        "status": "draft",
         "name": "catalog.publish.code_nasa_gov",
         "description": "Publish to code.nasa.gov portal",
         "otel": {
+          "status": "draft",
           "spanPattern": "catalog.publish.code_nasa_gov",
           "spanKind": "client"
         }
@@ -197,10 +205,10 @@
       "height": 80,
       "color": "#95A5A6",
       "pv": {
-        "status": "draft",
         "name": "catalog.publish.code_gov",
         "description": "Publish to federal code.gov registry",
         "otel": {
+          "status": "draft",
           "spanPattern": "catalog.publish.code_gov",
           "spanKind": "client"
         }
@@ -215,16 +223,18 @@
       "width": 180,
       "height": 80,
       "color": "#27AE60",
+      "event": {
+        "name": "catalog.publication.completed",
+        "attributes": {
+          "publication.success": "boolean",
+          "publication.portals": "array",
+          "publication.timestamp": "datetime"
+        }
+      },
       "pv": {
-        "status": "draft",
         "description": "Publication to all portals completed successfully",
-        "event": {
-          "name": "catalog.publication.completed",
-          "attributes": {
-            "publication.success": "boolean",
-            "publication.portals": "array",
-            "publication.timestamp": "datetime"
-          }
+        "otel": {
+          "status": "draft"
         }
       }
     },
@@ -237,16 +247,18 @@
       "width": 180,
       "height": 80,
       "color": "#5BC0DE",
+      "event": {
+        "name": "catalog.history.recorded",
+        "attributes": {
+          "history.file": "code-history.json",
+          "history.uuid": "string",
+          "history.snapshot_size": "integer"
+        }
+      },
       "pv": {
-        "status": "draft",
         "description": "Version snapshot recorded in code-history.json",
-        "event": {
-          "name": "catalog.history.recorded",
-          "attributes": {
-            "history.file": "code-history.json",
-            "history.uuid": "string",
-            "history.snapshot_size": "integer"
-          }
+        "otel": {
+          "status": "draft"
         }
       }
     },
@@ -260,8 +272,10 @@
       "height": 120,
       "color": "#34495E",
       "pv": {
-        "status": "draft",
-        "description": "OTEL resource representing the catalog service"
+        "description": "OTEL resource representing the catalog service",
+        "otel": {
+          "status": "draft"
+        }
       }
     }
   ],
@@ -272,7 +286,10 @@
       "toNode": "submission-processing-span",
       "fromSide": "right",
       "toSide": "left",
-      "label": "initiates"
+      "label": "initiates",
+      "pv": {
+        "edgeType": "data-flow"
+      }
     },
     {
       "id": "e2",
@@ -280,7 +297,10 @@
       "toNode": "validation-started",
       "fromSide": "top",
       "toSide": "bottom",
-      "label": "triggers"
+      "label": "triggers",
+      "pv": {
+        "edgeType": "data-flow"
+      }
     },
     {
       "id": "e3",
@@ -288,7 +308,10 @@
       "toNode": "schema-validation-span",
       "fromSide": "right",
       "toSide": "left",
-      "label": "starts"
+      "label": "starts",
+      "pv": {
+        "edgeType": "data-flow"
+      }
     },
     {
       "id": "e4",
@@ -296,7 +319,10 @@
       "toNode": "validation-completed",
       "fromSide": "right",
       "toSide": "left",
-      "label": "emits"
+      "label": "emits",
+      "pv": {
+        "edgeType": "data-flow"
+      }
     },
     {
       "id": "e5",
@@ -304,7 +330,10 @@
       "toNode": "data-persistence-span",
       "fromSide": "right",
       "toSide": "left",
-      "label": "child span"
+      "label": "child span",
+      "pv": {
+        "edgeType": "data-flow"
+      }
     },
     {
       "id": "e6",
@@ -312,7 +341,10 @@
       "toNode": "merge-completed",
       "fromSide": "bottom",
       "toSide": "top",
-      "label": "emits on success"
+      "label": "emits on success",
+      "pv": {
+        "edgeType": "data-flow"
+      }
     },
     {
       "id": "e7",
@@ -320,7 +352,10 @@
       "toNode": "publication-span",
       "fromSide": "right",
       "toSide": "left",
-      "label": "triggers"
+      "label": "triggers",
+      "pv": {
+        "edgeType": "data-flow"
+      }
     },
     {
       "id": "e8",
@@ -328,7 +363,10 @@
       "toNode": "publish-nasa-span",
       "fromSide": "right",
       "toSide": "left",
-      "label": "child span"
+      "label": "child span",
+      "pv": {
+        "edgeType": "data-flow"
+      }
     },
     {
       "id": "e9",
@@ -336,7 +374,10 @@
       "toNode": "publish-federal-span",
       "fromSide": "right",
       "toSide": "left",
-      "label": "child span"
+      "label": "child span",
+      "pv": {
+        "edgeType": "data-flow"
+      }
     },
     {
       "id": "e10",
@@ -344,7 +385,10 @@
       "toNode": "publication-completed",
       "fromSide": "right",
       "toSide": "left",
-      "label": "contributes to"
+      "label": "contributes to",
+      "pv": {
+        "edgeType": "data-flow"
+      }
     },
     {
       "id": "e11",
@@ -352,7 +396,10 @@
       "toNode": "publication-completed",
       "fromSide": "right",
       "toSide": "left",
-      "label": "contributes to"
+      "label": "contributes to",
+      "pv": {
+        "edgeType": "data-flow"
+      }
     },
     {
       "id": "e12",
@@ -360,7 +407,10 @@
       "toNode": "history-recorded",
       "fromSide": "bottom",
       "toSide": "top",
-      "label": "emits"
+      "label": "emits",
+      "pv": {
+        "edgeType": "data-flow"
+      }
     },
     {
       "id": "e13",
@@ -368,7 +418,10 @@
       "toNode": "submission-processing-span",
       "fromSide": "bottom",
       "toSide": "top",
-      "label": "context"
+      "label": "context",
+      "pv": {
+        "edgeType": "data-flow"
+      }
     }
   ]
 }
