@@ -1,0 +1,427 @@
+{
+  "pv": {
+    "name": "NASA Open Source Catalog - Submission Workflow (OTEL)",
+    "version": "1.0.0",
+    "markdown": ".principal-views/submission-workflow/submission-workflow.md"
+  },
+  "nodes": [
+    {
+      "id": "submission-received",
+      "type": "otel-event",
+      "label": "Submission Received",
+      "x": 100,
+      "y": 300,
+      "width": 200,
+      "height": 100,
+      "color": "#E67E22",
+      "pv": {
+        "event": {
+          "name": "catalog.submission.received",
+          "attributes": {
+            "submission.source": "github_pr | web_form | robot_branch",
+            "submission.project_name": "string",
+            "submission.nasa_center": "string"
+          }
+        },
+        "description": "Triggered when a new project submission is received through any channel",
+        "otel": {
+          "status": "draft"
+        }
+      }
+    },
+    {
+      "id": "submission-processing-span",
+      "type": "otel-span-convention",
+      "label": "Process Submission",
+      "x": 400,
+      "y": 250,
+      "width": 250,
+      "height": 200,
+      "color": "#3498DB",
+      "pv": {
+        "name": "catalog.submission.process",
+        "description": "Parent span covering the entire submission processing lifecycle",
+        "otel": {
+          "status": "draft",
+          "spanPattern": "catalog.submission.**",
+          "spanKind": "internal"
+        }
+      }
+    },
+    {
+      "id": "validation-started",
+      "type": "otel-event",
+      "label": "Validation Started",
+      "x": 450,
+      "y": 100,
+      "width": 180,
+      "height": 80,
+      "color": "#9B59B6",
+      "pv": {
+        "event": {
+          "name": "catalog.validation.started",
+          "attributes": {
+            "validator": "travis_ci",
+            "commit.sha": "string"
+          }
+        },
+        "description": "CI/CD pipeline begins validation",
+        "otel": {
+          "status": "draft"
+        }
+      }
+    },
+    {
+      "id": "schema-validation-span",
+      "type": "otel-span-convention",
+      "label": "Validate Schema",
+      "x": 750,
+      "y": 150,
+      "width": 220,
+      "height": 120,
+      "color": "#27AE60",
+      "pv": {
+        "name": "catalog.schema.validate",
+        "description": "Schema validation against code-nasa-schema.json",
+        "otel": {
+          "status": "draft",
+          "spanPattern": "catalog.schema.**",
+          "spanKind": "internal"
+        }
+      }
+    },
+    {
+      "id": "validation-completed",
+      "type": "otel-event",
+      "label": "Validation Completed",
+      "x": 1050,
+      "y": 180,
+      "width": 180,
+      "height": 80,
+      "color": "#27AE60",
+      "pv": {
+        "event": {
+          "name": "catalog.validation.completed",
+          "attributes": {
+            "validation.result": "success | failure",
+            "validation.errors": "array",
+            "validation.duration_ms": "integer"
+          }
+        },
+        "description": "Schema validation completes with result",
+        "otel": {
+          "status": "draft"
+        }
+      }
+    },
+    {
+      "id": "data-persistence-span",
+      "type": "otel-span-convention",
+      "label": "Persist Data",
+      "x": 750,
+      "y": 320,
+      "width": 220,
+      "height": 120,
+      "color": "#5CB85C",
+      "pv": {
+        "name": "catalog.data.persist",
+        "description": "Writing data to catalog.json, code.json, and code-history.json",
+        "otel": {
+          "status": "draft",
+          "spanPattern": "catalog.data.**",
+          "spanKind": "internal"
+        }
+      }
+    },
+    {
+      "id": "merge-completed",
+      "type": "otel-event",
+      "label": "Submission Merged",
+      "x": 450,
+      "y": 500,
+      "width": 180,
+      "height": 80,
+      "color": "#3498DB",
+      "pv": {
+        "event": {
+          "name": "catalog.submission.merged",
+          "attributes": {
+            "git.branch": "master",
+            "git.commit_sha": "string",
+            "merge.author": "string"
+          }
+        },
+        "description": "Submission successfully merged to master branch",
+        "otel": {
+          "status": "draft"
+        }
+      }
+    },
+    {
+      "id": "publication-span",
+      "type": "otel-span-convention",
+      "label": "Execute Publication",
+      "x": 750,
+      "y": 480,
+      "width": 250,
+      "height": 220,
+      "color": "#9B59B6",
+      "pv": {
+        "name": "catalog.publication.execute",
+        "description": "Parent span for publishing to external portals",
+        "otel": {
+          "status": "draft",
+          "spanPattern": "catalog.publication.**",
+          "spanKind": "client"
+        }
+      }
+    },
+    {
+      "id": "publish-nasa-span",
+      "type": "otel-span-convention",
+      "label": "Publish to NASA Portal",
+      "x": 1100,
+      "y": 500,
+      "width": 200,
+      "height": 80,
+      "color": "#3498DB",
+      "pv": {
+        "name": "catalog.publish.code_nasa_gov",
+        "description": "Publish to code.nasa.gov portal",
+        "otel": {
+          "status": "draft",
+          "spanPattern": "catalog.publish.code_nasa_gov",
+          "spanKind": "client"
+        }
+      }
+    },
+    {
+      "id": "publish-federal-span",
+      "type": "otel-span-convention",
+      "label": "Publish to Federal Portal",
+      "x": 1100,
+      "y": 600,
+      "width": 200,
+      "height": 80,
+      "color": "#95A5A6",
+      "pv": {
+        "name": "catalog.publish.code_gov",
+        "description": "Publish to federal code.gov registry",
+        "otel": {
+          "status": "draft",
+          "spanPattern": "catalog.publish.code_gov",
+          "spanKind": "client"
+        }
+      }
+    },
+    {
+      "id": "publication-completed",
+      "type": "otel-event",
+      "label": "Publication Completed",
+      "x": 1380,
+      "y": 550,
+      "width": 180,
+      "height": 80,
+      "color": "#27AE60",
+      "pv": {
+        "event": {
+          "name": "catalog.publication.completed",
+          "attributes": {
+            "publication.success": "boolean",
+            "publication.portals": "array",
+            "publication.timestamp": "datetime"
+          }
+        },
+        "description": "Publication to all portals completed successfully",
+        "otel": {
+          "status": "draft"
+        }
+      }
+    },
+    {
+      "id": "history-recorded",
+      "type": "otel-event",
+      "label": "History Recorded",
+      "x": 750,
+      "y": 750,
+      "width": 180,
+      "height": 80,
+      "color": "#5BC0DE",
+      "pv": {
+        "event": {
+          "name": "catalog.history.recorded",
+          "attributes": {
+            "history.file": "code-history.json",
+            "history.uuid": "string",
+            "history.snapshot_size": "integer"
+          }
+        },
+        "description": "Version snapshot recorded in code-history.json",
+        "otel": {
+          "status": "draft"
+        }
+      }
+    },
+    {
+      "id": "catalog-service-resource",
+      "type": "otel-resource",
+      "label": "Catalog Service",
+      "x": 100,
+      "y": 50,
+      "width": 250,
+      "height": 120,
+      "color": "#34495E",
+      "pv": {
+        "description": "OTEL resource representing the catalog service",
+        "otel": {
+          "status": "draft"
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "submission-received",
+      "toNode": "submission-processing-span",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "initiates",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e2",
+      "fromNode": "submission-processing-span",
+      "toNode": "validation-started",
+      "fromSide": "top",
+      "toSide": "bottom",
+      "label": "triggers",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e3",
+      "fromNode": "validation-started",
+      "toNode": "schema-validation-span",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "starts",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e4",
+      "fromNode": "schema-validation-span",
+      "toNode": "validation-completed",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "emits",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e5",
+      "fromNode": "submission-processing-span",
+      "toNode": "data-persistence-span",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "child span",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e6",
+      "fromNode": "submission-processing-span",
+      "toNode": "merge-completed",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "label": "emits on success",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e7",
+      "fromNode": "merge-completed",
+      "toNode": "publication-span",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "triggers",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e8",
+      "fromNode": "publication-span",
+      "toNode": "publish-nasa-span",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "child span",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e9",
+      "fromNode": "publication-span",
+      "toNode": "publish-federal-span",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "child span",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e10",
+      "fromNode": "publish-nasa-span",
+      "toNode": "publication-completed",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "contributes to",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e11",
+      "fromNode": "publish-federal-span",
+      "toNode": "publication-completed",
+      "fromSide": "right",
+      "toSide": "left",
+      "label": "contributes to",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e12",
+      "fromNode": "data-persistence-span",
+      "toNode": "history-recorded",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "label": "emits",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    },
+    {
+      "id": "e13",
+      "fromNode": "catalog-service-resource",
+      "toNode": "submission-processing-span",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "label": "context",
+      "pv": {
+        "edgeType": "data-flow"
+      }
+    }
+  ]
+}
