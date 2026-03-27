@@ -1,0 +1,85 @@
+{
+  "name": "Publication Failure",
+  "description": "Submission succeeds but publication to one portal fails",
+  "canvas": ".principal-views/submission-workflow/submission-workflow.otel.canvas",
+  "scenarios": [
+    {
+      "name": "Partial Publication Failure",
+      "description": "One portal succeeds, one portal fails",
+      "steps": [
+        {
+          "event": "catalog.submission.received",
+          "description": "New project submission received",
+          "highlightNodes": ["submission-received"],
+          "color": "#E67E22"
+        },
+        {
+          "span": "catalog.submission.process",
+          "description": "Begin processing the submission",
+          "highlightNodes": ["submission-processing-span"],
+          "color": "#3498DB"
+        },
+        {
+          "event": "catalog.validation.started",
+          "description": "Travis CI initiates validation",
+          "highlightNodes": ["validation-started", "submission-processing-span"],
+          "color": "#9B59B6"
+        },
+        {
+          "span": "catalog.schema.validate",
+          "description": "Validate against code-nasa-schema.json",
+          "highlightNodes": ["schema-validation-span", "submission-processing-span"],
+          "color": "#27AE60"
+        },
+        {
+          "event": "catalog.validation.completed",
+          "description": "Schema validation passes",
+          "highlightNodes": ["validation-completed", "submission-processing-span"],
+          "color": "#27AE60"
+        },
+        {
+          "span": "catalog.data.persist",
+          "description": "Write data to catalog.json, code.json, and code-history.json",
+          "highlightNodes": ["data-persistence-span", "submission-processing-span"],
+          "color": "#5CB85C"
+        },
+        {
+          "event": "catalog.submission.merged",
+          "description": "Submission merged to master branch",
+          "highlightNodes": ["merge-completed", "submission-processing-span"],
+          "color": "#3498DB"
+        },
+        {
+          "span": "catalog.publication.execute",
+          "description": "Begin publication to external portals",
+          "highlightNodes": ["publication-span"],
+          "color": "#9B59B6"
+        },
+        {
+          "span": "catalog.publish.code_nasa_gov",
+          "description": "Publish to code.nasa.gov portal - SUCCESS",
+          "highlightNodes": ["publish-nasa-span", "publication-span"],
+          "color": "#3498DB"
+        },
+        {
+          "span": "catalog.publish.code_gov",
+          "description": "Publish to federal code.gov registry - FAILURE",
+          "highlightNodes": ["publish-federal-span", "publication-span"],
+          "color": "#E74C3C"
+        },
+        {
+          "event": "catalog.publication.completed",
+          "description": "Publication partially failed",
+          "highlightNodes": ["publication-completed", "publication-span"],
+          "color": "#F39C12"
+        },
+        {
+          "event": "catalog.history.recorded",
+          "description": "Version snapshot saved despite publication failure",
+          "highlightNodes": ["history-recorded"],
+          "color": "#5BC0DE"
+        }
+      ]
+    }
+  ]
+}
